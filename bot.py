@@ -6,12 +6,14 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 from openai import OpenAI
 
 # Загружаем ключи из переменных окружения
-TELEGRAM_TOKEN = os.getenv("")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+OPENAI_KEY = os.getenv("OPENAI_KEY")
 
 ALLOWED_USERS = {856689872, 7238526055}  # твой и мамин ID
 
 logging.basicConfig(level=logging.INFO)
 client = OpenAI(api_key=OPENAI_KEY)
+
 
 # Проверяем доступ
 def allowed(user_id: int) -> bool:
