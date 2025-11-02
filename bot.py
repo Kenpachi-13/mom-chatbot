@@ -1,3 +1,6 @@
+import sys
+print("✅ Running on Python:", sys.version)
+
 import os
 import logging
 from telegram import Update
